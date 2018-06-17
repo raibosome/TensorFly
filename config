@@ -1,0 +1,7 @@
+export IMAGE_SIZE=224 #224
+export ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}" #mobilenet_0.50_IMAGE_SIZE
+export TRAINING_STEPS=1000 #4000
+export LEARNING_RATE=0.01 #0.05
+export TRAIN_BATCH_SIZE=200 #100
+
+# remember to run `source config
