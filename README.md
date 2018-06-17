@@ -2,6 +2,9 @@
 
 Classifying common food in Singapore using transfer learning from a trained model on the ImageNet done by TensorFlow.
 
+## Labels
+ayammasakmerah, chendol, icekacang, meerebus, meesiam, nasiayam, nasilemak, rotiprata, salad, satay, wantonnoodle
+
 ## Environments
 Model can be deployed in Desktop, Android and iOS. For Android and iOS, both TensorFlow Mobile and iOS examples are available.
 
