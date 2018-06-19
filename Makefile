@@ -10,16 +10,26 @@ reset :
 
 # Copy data to respective folders
 data :
-	cp -r ~/Desktop/data/downloads/* tf_files/photos
+	cp -r ${PATH_DATA}/downloads/* tf_files/photos
 
 tensorboard :
-	# pkill -f "tensorboard"
 	tensorboard --logdir tf_files/training_summaries &
+
+tensorboard_kill :
+	pkill -f "tensorboard"
+
+# Check variables
+variables :
+	echo ${IMAGE_SIZE}
+	echo ${MODEL_SIZE}
+	echo ${ARCHITECTURE}
+	echo ${TRAINING_STEPS}
+	echo ${LEARNING_RATE}
+	echo ${TRAIN_BATCH_SIZE}
 
 train :
 	# remember to run `source config
 	make tensorboard
-	bash config
 	python -m scripts.retrain \
 	  --image_dir=tf_files/photos \
 	  --bottleneck_dir=tf_files/bottlenecks \
@@ -33,7 +43,7 @@ train :
 	  --train_batch_size=${TRAIN_BATCH_SIZE}
 
 train_tfmobileios :
-	# remember to run source config
+	# remember to run `source config
 	# remember to set env to use TF 1.1: source activate tensorflowmobileios
 	make tensorboard
 	python -m scripts.retrain \
@@ -100,7 +110,7 @@ evaluate :
 test :
 	python -m scripts.label_image \
 	  --graph=tf_files/retrained_graph_tfmobileios.pb  \
-	  --image=/Users/raimibinkarim/Downloads/28763485513_3a8ec95640_o.jpg
+	  --image=/Users/raimibinkarim/Desktop/testing
 
 export_tfmobile_to_android :
 	cp tf_files/rounded_graph.pb android/tfmobile/assets/graph.pb
@@ -117,3 +127,4 @@ export_tfmobile_to_ios :
 export_tflite_to_ios :
 	cp tf_files/optimized_graph.lite ios/tflite/data/graph.lite
 	cp tf_files/retrained_labels.txt ios/tflite/data/labels.txt
+
