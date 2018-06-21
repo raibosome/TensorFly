@@ -1,4 +1,4 @@
-.PHONY : folders, reset, data, tensorboard, train, optimize, quantize, summarize, evaluate, test
+.PHONY : folders, reset, data, tensorboard, train, optimize, quantize, summarize, evaluate, test, speech
 
 # Prepare folders
 folders :
@@ -41,6 +41,10 @@ train :
 	  --how_many_training_steps=${TRAINING_STEPS}  \
 	  --learning_rate=${LEARNING_RATE} \
 	  --train_batch_size=${TRAIN_BATCH_SIZE}
+	make speech
+
+speech :
+	say "Hello sir. Training for ${ARCHITECTURE} is now complete. Please come to the computer to continue."
 
 train_tfmobileios :
 	# remember to run `source config
