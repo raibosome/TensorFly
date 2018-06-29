@@ -1,9 +1,10 @@
-export IMAGE_SIZE=224 #224
-export MODEL_SIZE=0.25
+export IMAGE_SIZE=224
+export MODEL_SIZE=0.75
 export ARCHITECTURE="mobilenet_${MODEL_SIZE}_${IMAGE_SIZE}" 
-export TRAINING_STEPS=100 #4000
-export LEARNING_RATE=0.05 #0.05
+export TRAINING_STEPS=4000 #4000
+export LEARNING_RATE=0.01 #0.05
 export TRAIN_BATCH_SIZE=100 #100
-export PATH_DATA="/Users/raimibinkarim/Desktop/data/"
+export PATH_DATA="/Users/raimibinkarim/Desktop/TensorFood-Data/downloads/"
+export PATH_EVALUATE="/Users/raimibinkarim/Desktop/evaluation/nasi-lemak-with-chicken.jpg"
 
 # remember to run `source config

@@ -1,16 +1,18 @@
 .PHONY : folders, reset, data, tensorboard, train, optimize, quantize, summarize, evaluate, test, speech
 
+# run source config!
+
 # Prepare folders
-folders :
-	mkdir tf_files/photos
+# folders :
+# 	mkdir tf_files/photos
 
 reset :
 	rm -r tf_files/*
-	make folders
+	# make folders
 
 # Copy data to respective folders
-data :
-	cp -r ${PATH_DATA}/downloads/* tf_files/photos
+# data :
+# 	cp -r ${PATH_DATA}/downloads/* tf_files/photos
 
 tensorboard :
 	tensorboard --logdir tf_files/training_summaries &
@@ -26,18 +28,19 @@ variables :
 	echo ${TRAINING_STEPS}
 	echo ${LEARNING_RATE}
 	echo ${TRAIN_BATCH_SIZE}
+	echo ${PATH_DATA}
 
 train :
 	# remember to run `source config
 	make tensorboard
 	python -m scripts.retrain \
-	  --image_dir=tf_files/photos \
+	  --image_dir=${PATH_DATA} \
 	  --bottleneck_dir=tf_files/bottlenecks \
 	  --model_dir=tf_files/models/ \
 	  --summaries_dir=tf_files/training_summaries/${ARCHITECTURE}_${TRAINING_STEPS}_${TRAIN_BATCH_SIZE}_${LEARNING_RATE} \
 	  --output_graph=tf_files/retrained_graph.pb \
 	  --output_labels=tf_files/retrained_labels.txt \
-	  --architecture="${ARCHITECTURE}" \
+	  --architecture=${ARCHITECTURE} \
 	  --how_many_training_steps=${TRAINING_STEPS}  \
 	  --learning_rate=${LEARNING_RATE} \
 	  --train_batch_size=${TRAIN_BATCH_SIZE}
@@ -51,7 +54,7 @@ train_tfmobileios :
 	# remember to set env to use TF 1.1: source activate tensorflowmobileios
 	make tensorboard
 	python -m scripts.retrain \
-	  --image_dir=tf_files/photos \
+	  --image_dir=${PATH_DATA} \
 	  --bottleneck_dir=tf_files/bottlenecks \
 	  --model_dir=tf_files/models/ \
 	  --summaries_dir=tf_files/training_summaries/${ARCHITECTURE}_tfmobileios_${TRAINING_STEPS}_${TRAIN_BATCH_SIZE}_${LEARNING_RATE} \
@@ -113,8 +116,8 @@ evaluate :
 
 test :
 	python -m scripts.label_image \
-	  --graph=tf_files/retrained_graph_tfmobileios.pb  \
-	  --image=/Users/raimibinkarim/Desktop/testing
+	  --graph=tf_files/retrained_graph.pb  \
+	  --image=${PATH_EVALUATE}
 
 export_tfmobile_to_android :
 	cp tf_files/rounded_graph.pb android/tfmobile/assets/graph.pb
