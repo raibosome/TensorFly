@@ -23,7 +23,7 @@ INJECTED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/a
 INJECTED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:18:1-42:12
 INJECTED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:18:1-42:12
 	package
-		ADDED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:19:5-51
+		ADDED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:19:5-44
 		INJECTED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -130,12 +130,12 @@ MERGED from [org.tensorflow:tensorflow-lite:0.1.7] /Users/raimibinkarim/.gradle/
 		ADDED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:28:18-44
 	android:theme
 		ADDED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:31:9-45
-activity#com.example.android.tflitecamerademo.CameraActivity
+activity#com.qwivel.android.tensorfood.CameraActivity
 ADDED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:33:9-39:20
 	android:label
 		ADDED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:34:19-51
 	android:name
-		ADDED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:33:19-85
+		ADDED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:33:19-78
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from /Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/AndroidManifest.xml:35:13-38:29
 action#android.intent.action.MAIN

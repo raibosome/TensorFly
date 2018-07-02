@@ -1,4 +1,4 @@
-.PHONY : folders, reset, data, tensorboard, train, optimize, quantize, summarize, evaluate, test, speech
+.PHONY : folders, reset, data, tensorboard, train, optimize, quantize, summarize, evaluate, test, speech, export
 
 # run source config!
 
@@ -17,7 +17,7 @@ reset :
 tensorboard :
 	tensorboard --logdir tf_files/training_summaries &
 
-tensorboard_kill :
+tensorboard-kill :
 	pkill -f "tensorboard"
 
 # Check variables
@@ -118,6 +118,12 @@ test :
 	python -m scripts.label_image \
 	  --graph=tf_files/retrained_graph.pb  \
 	  --image=${PATH_EVALUATE}
+
+export :
+	make export_tflite_to_android
+	make export_tfmobile_to_android
+	make export_tfmobile_to_ios
+	make export_tflite_to_ios
 
 export_tfmobile_to_android :
 	cp tf_files/rounded_graph.pb android/tfmobile/assets/graph.pb

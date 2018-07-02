@@ -1921,15 +1921,8 @@
         <item name="android:textAppearance">?android:textAppearanceLarge</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
         <item name="android:shadowDy">-6.5</item>
-    </style></file><file path="/Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/res/values/colors.xml" qualifiers=""><color name="control_background">#cc4285f4</color></file><file path="/Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/res/values/base-strings.xml" qualifiers=""><string name="app_name">TfLiteCameraDemo</string><string name="intro_message">
-        <![CDATA[
-        
-            
-            This sample demonstrates the basic use of TfLite API. Check the source code to see how
-            you can use TfLite for efficient, on-device inference with trained TensorFlow models.
-            
-        
-        ]]>
+    </style></file><file path="/Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/res/values/colors.xml" qualifiers=""><color name="control_background">#cc4285f4</color></file><file path="/Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/res/values/base-strings.xml" qualifiers=""><string name="app_name">TensorFood</string><string name="intro_message">
+        Classifying food, in particular for the Singaporean context.
     </string></file><file path="/Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/res/values/styles.xml" qualifiers=""><style name="MaterialTheme" parent="android:Theme.Material.Light.NoActionBar.Fullscreen"/></file><file path="/Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/res/values/strings.xml" qualifiers=""><string name="picture">Picture</string><string name="description_info">Info</string><string name="request_permission">This sample needs camera permission.</string><string name="camera_error">This device doesn\'t support Camera2 API.</string><string name="toggle_turn_on">NN:On</string><string name="toggle_turn_off">NN:Off</string><string name="toggle">Use NNAPI</string></file><file path="/Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/res/values/template-dimens.xml" qualifiers=""><dimen name="margin_tiny">4dp</dimen><dimen name="margin_small">8dp</dimen><dimen name="margin_medium">16dp</dimen><dimen name="margin_large">32dp</dimen><dimen name="margin_huge">64dp</dimen><dimen name="horizontal_page_margin">@dimen/margin_medium</dimen><dimen name="vertical_page_margin">@dimen/margin_medium</dimen></file><file path="/Users/raimibinkarim/Documents/ComputerVisionClassify/TensorFood/android/tflite/app/src/main/res/values/template-styles.xml" qualifiers=""><style name="Theme.Base" parent="android:Theme.Light"/><style name="Theme.Sample" parent="Theme.Base"/><style name="AppTheme" parent="Theme.Sample"/><style name="Widget"/><style name="Widget.SampleMessage">
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
         <item name="android:lineSpacingMultiplier">1.1</item>

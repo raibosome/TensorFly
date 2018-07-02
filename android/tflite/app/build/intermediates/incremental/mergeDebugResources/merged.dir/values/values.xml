@@ -716,21 +716,14 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">TfLiteCameraDemo</string>
+    <string name="app_name">TensorFood</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="camera_error">This device doesn\'t support Camera2 API.</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="description_info">Info</string>
     <string name="intro_message">
-        <![CDATA[
-        
-            
-            This sample demonstrates the basic use of TfLite API. Check the source code to see how
-            you can use TfLite for efficient, on-device inference with trained TensorFlow models.
-            
-        
-        ]]>
+        Classifying food, in particular for the Singaporean context.
     </string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
