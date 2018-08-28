@@ -1,8 +1,8 @@
 # TensorFly
 
-This is an end-to-end-ish pipeline of an image recognition task using transfer learning running on TensorFlow framework. This project is designed to be _lite_ (intentional spelling) for **fast prototyping** (as if prototyping isn't fast enough). So I minimised touchpoints by abstracting them into make commands.
+This is an end-to-end-ish pipeline of an image recognition task using **transfer learning**, running on TensorFlow framework. This project is designed to be _lite_ (intentional spelling) for _fast prototyping_ (as if prototyping isn't fast enough). So I minimised touchpoints by abstracting them into make commands.
 
-P.S. 'TensorFly' because I was training this on aeroplane images. I have also created TensorFood and TensorBug for image recognition of food and bugs respectively. These are on http://qwivel.com.
+Not the kind of housefly but 'TensorFly' because I was training this on aeroplane images. I have also created TensorFood and TensorBug for classifying food and bugs respectively. These are on http://qwivel.com.
 
 ## -1. Project Directory
 
