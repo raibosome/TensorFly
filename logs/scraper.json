@@ -1,0 +1,12 @@
+{
+    "Records": [
+        {
+            "keywords": "A330-300 OR Airbus A330-300 -Boeing -seating -model -card -dashboard -cockpit -blueprint -toy",
+            "limit": 350,
+            "size": "medium",
+            "print_urls": false,
+            "output_directory": "data",
+            "chromedriver": "/Users/raimibinkarim/Library/chromedriver"
+        }
+    ]
+}

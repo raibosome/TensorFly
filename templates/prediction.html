@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#correct").click(function () {
+                $("#instruction").text("Awesome!").css({ "visibility": "visible" });
+                $("#wrong").remove();
+            });
+            $("#wrong").click(function () {
+                $("#label,#corrected,#instruction").css({ "visibility": "visible" });
+                $("#correct").remove();
+            });
+            $("#corrected").click(function () {
+                alert("Thanks!");
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <h3>Result</h3>
+    <p>{{prediction}}</p>
+    <img src={{url_for('static', filename=filename)}} height="300px">
+    <br>
+    <!-- <form id="form1" method="POST" enctype="multipart/form-data"> -->
+    <button id="correct">Yeah, that's about right</button>
+    <button id="wrong">Wait whut?"</button>
+    <br>
+    <br>
+    <p id="instruction" style="visibility:hidden">What should it be then?</p>
+    <input id="label" type="text" style='visibility:hidden'>
+    <button id="corrected" style='visibility:hidden'>Submit</button>
+    <br>
+    <p>{{misc}}</p>
+
+
+</body>
+
+</html>

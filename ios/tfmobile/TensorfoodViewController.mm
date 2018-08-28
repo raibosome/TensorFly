@@ -486,10 +486,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
   const float topMargin = 10.0f;
 
   const float valueWidth = 48.0f;
-  const float valueHeight = 26.0f;
+  const float valueHeight = 18.0f; //26.0f
 
   const float labelWidth = 246.0f;
-  const float labelHeight = 26.0f;
+  const float labelHeight = 18.0f; // 26.0f
 
   const float labelMarginX = 5.0f;
   const float labelMarginY = 5.0f;
@@ -551,7 +551,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                        height:(float)height
                     alignment:(NSString *)alignment {
   CFTypeRef font = (CFTypeRef) @"Menlo-Regular";
-  const float fontSize = 20.0f;
+  const float fontSize = 12.0f; // 20.0f
 
   const float marginSizeX = 5.0f;
   const float marginSizeY = 2.0f;
