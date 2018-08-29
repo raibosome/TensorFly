@@ -27,7 +27,7 @@ tensorboard-kill :
 train :
 	# remember to run `source config
 	make tensorboard
-	python -m scripts.retrain_latest \
+	python -m scripts.retrain \
 	  --image_dir=data/ \
 	  --bottleneck_dir=tf_files/bottlenecks/${MODEL}  \
 	  --summaries_dir=tf_files/training_summaries/${MODEL_ID} \

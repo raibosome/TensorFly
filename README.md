@@ -136,15 +136,15 @@ We're lucky to have a myriad of things to choose from: (a) model; (b) model vers
 |                   | v2            | -                 | 299                   | ImageNet              | -                     | 1
 |                   | v3            | -                 | 299                   | ImageNet, iNaturalist^ | -                     | 1
 | Inception-ResNet  | v2            | -                 | 299                   | ImageNet              | -                     | 1
-| MobileNet         | v1            | 100, 75, 50, 25   | 224, 192, 160, 128    | ImageNet              | Yes                   | 1
-|                   | v2            | 140, 130, 100, 75, 50, 35   | 224, 192, 160, 128, 96 | ImageNet | -                       | 2
+| MobileNet         | v1            | depth (%): 100, 75, 50, 25   | 224, 192, 160, 128    | ImageNet              | Yes                   | 1
+|                   | v2            | depth (%): 140, 130, 100, 75, 50, 35   | 224, 192, 160, 128, 96 | ImageNet | -                       | 2
 | NASNet-A          | large, mobile | -                 | 331                   | ImageNet              | -                     | 1
-| PNASNet-5         | large         | -                 | -                     | ImageNet              | -                     | 2
-| ResNet            | v1, v2        | 50, 101, 152      | -                     | ImageNet              | -                     | 1
+| PNASNet-5         | large         | -                 | 331                   | ImageNet              | -                     | 2
+| ResNet            | v1, v2        | layers: 50, 101, 152      | 224                   | ImageNet              | -                     | 1
 
 All these options should be set in `config/training.sh` before training.
 
-ImageNet: ILSVRC-2012-CLS
+ImageNet: ILSVRC-2012-CLS<br>
 ^The weights for this module were obtained by training on the iNaturalist (iNat) 2017 dataset, after pre-training on ImageNet.
 
 Visit https://www.tensorflow.org/hub/modules/image.
@@ -162,5 +162,5 @@ Visit https://www.tensorflow.org/hub/modules/image.
 | NASNet-A          | large     | 331           |           | 4032 | | 2017
 |                   | mobile    | 224           |           | 1056 | | 2017
 | PNASNet-5         | large     | 331           |           | 4320 | | 2017
-| ResNet            | v1        | 224           |                   | 2048 | | 2015
+| ResNet            | v1        | 224           | 60.3M (152) (?)                  | 2048 | | 2015
 |                   | v2        | 224           |           | 2048 | Batch norm | 2016

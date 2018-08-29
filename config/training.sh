@@ -6,7 +6,7 @@ export PATH_EVALUATE_JPG="/Users/raimibinkarim/Desktop/evaluation/eval.jpg"
 export CLASSES=$(ls data | wc -l | xargs)
 
 # Architecture
-export MODEL="mobilenet_v2_100_224"
+export MODEL="nasnet_large"
 # Models available:
 # inception_{v1,v2,v3}
 # inception_resnet_v2
@@ -18,12 +18,13 @@ export PRETRAINED_ON="imagenet"
 # Dataset which the above model was trained on:
 # imagenet
 # inaturalist (only for inception_v3)
-export TFHUB_MODULE="https://tfhub.dev/google/${PRETRAINED_ON}/${MODEL}/feature_vector/1"
-export INPUT_HEIGHT=224
-export INPUT_WIDTH=224
+export UPDATE_VERSION=1
+export INPUT_WIDTH=331
+export INPUT_HEIGHT=${INPUT_WIDTH}
+export TFHUB_MODULE="https://tfhub.dev/google/${PRETRAINED_ON}/${MODEL}/feature_vector/${UPDATE_VERSION}"
 
 # Training
-export TRAINING_STEPS=4000 #4000
+export TRAINING_STEPS=1000 #4000
 export LEARNING_RATE=0.05 #0.05
 export TRAIN_BATCH_SIZE=100 #100
 export VALIDATION_BATCH_SIZE=-1 #100, -1
