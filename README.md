@@ -130,7 +130,7 @@ open ios/tflite/*.xcworkspace
 
 We're lucky to have a myriad of things to choose from: (a) model; (b) model version; (c) model size; (d) option for quantisation; and (e) dataset on which the model was trained on.
 
-| Model             | Versions      | Model Size        | Input Sizes           | Pretrained On   | Quantisation Option   | Update Version
+| Model Name        | Model Version | Model Size        | Input Sizes           | Pretrained On   | Quantisation Option   | Update Version
 | ----------------- | ------------- | ----------------- | --------------------- | --------------------- | --------------------- | -------------
 | `inception`       | `v1`          | -                 | `224`                 | `imagenet`              | -                     | `1`
 |                   | `v2`          | -                 | `299`                 | `imagenet`              | -                     | `1`
@@ -142,13 +142,13 @@ We're lucky to have a myriad of things to choose from: (a) model; (b) model vers
 | `pnaset`          | `large`       | -                 | `331`                 | `imagenet`              | -                     | `2`
 | `resnet`          | `v1`, `v2`    | layers: `50`, `101`, `152` | `224`        | `imagenet`              | -                     | `1`
 
-To use 
+To use Inception V3 pretrained on ImageNet,
 
 ``` bash
-export MODEL="nasnet_large"
+export MODEL="inception_v3"
 export PRETRAINED_ON="imagenet"
 export UPDATE_VERSION=1
-export INPUT_WIDTH=331
+export INPUT_WIDTH=299
 ```
 
 All these options should be set in `config/training.sh` before training.
