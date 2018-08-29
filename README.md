@@ -32,7 +32,7 @@ make prepare
 ## 0. Download Libraries and Drivers
 
 1. TensorFlow: `tensorflow==1.8.*`
-2. Chrome Driver
+2. [Chrome Driver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 3. TensorFlow Lite: `tensorflow==1.7.*` (optional)
 4. TensorFlow Mobile iOS:`tensorflow==1.1.*` (optional)
 
@@ -45,7 +45,7 @@ make prepare
     make download
     ```
     This downloads your queries into folders of images in the `data/` folder.
-3. Rename your folders.
+4. Rename your folders.
 
 ## 1. Train Model
 
@@ -147,7 +147,7 @@ All these options should be set in `config/training.sh` before training.
 ImageNet: ILSVRC-2012-CLS<br>
 ^The weights for this module were obtained by training on the iNaturalist (iNat) 2017 dataset, after pre-training on ImageNet.
 
-Visit https://www.tensorflow.org/hub/modules/image.
+Visit [TensorFlow Hub for Image Modules](https://www.tensorflow.org/hub/modules/image).
 
 ## Appendix B: Model Specifications
 
