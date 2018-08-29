@@ -135,14 +135,14 @@ We're lucky to have a myriad of things to choose from: (a) model; (b) model vers
 | `inception`       | `v1`          | -                 | `224`                 | `imagenet`              | -                     | `1`
 |                   | `v2`          | -                 | `299`                 | `imagenet`              | -                     | `1`
 |                   | `v3`          | -                 | `299`                 | `imagenet`, `inaturalist`^ | -                     | `1`
-| `inception-resnet` | `v2`         | -                 | `299`                 | `imagenet`              | -                     | `1`
+| `inception_resnet` | `v2`         | -                 | `299`                 | `imagenet`              | -                     | `1`
 | `mobilenet`       | `v1`          | depth: `100`, `75`, `50`, `25`   | `224`, `192`, `160`, `128`    | `imagenet`              | Yes   | `1`
 |                   | `v2`          | depth: `140`, `130`, `100`, `75`, `50`, `35` | `224`, `192`, `160`, `128`, `96` | `imagenet` | - | `2`
 | `nasnet`          | `large`, `mobile` | -             | `331`                 | `imagenet`              | -                     | `1`
 | `pnaset`          | `large`       | -                 | `331`                 | `imagenet`              | -                     | `2`
 | `resnet`          | `v1`, `v2`    | layers: `50`, `101`, `152` | `224`        | `imagenet`              | -                     | `1`
 
-To use Inception V3 pretrained on ImageNet,
+To use Inception V3 pretrained on ImageNet, set the following in `config/training.sh` before training.
 
 ``` bash
 export MODEL="inception_v3"
@@ -151,14 +151,14 @@ export UPDATE_VERSION=1
 export INPUT_WIDTH=299
 ```
 
-All these options should be set in `config/training.sh` before training.
-
 ImageNet: ILSVRC-2012-CLS<br>
 ^The weights for this module were obtained by training on the iNaturalist (iNat) 2017 dataset, after pre-training on ImageNet.
 
 Visit [TensorFlow Hub for Image Modules](https://www.tensorflow.org/hub/modules/image).
 
 ## Appendix B: Model Specifications
+
+WIP
 
 | Model             | Version   | Input Size    | No. of Parameters | Penultimate Layer Size | Feature | Published |
 | ----------------- | --------- | ------------- | ----------------- | ---------------------- | - | -

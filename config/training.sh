@@ -24,8 +24,8 @@ export INPUT_HEIGHT=${INPUT_WIDTH}
 export TFHUB_MODULE="https://tfhub.dev/google/${PRETRAINED_ON}/${MODEL}/feature_vector/${UPDATE_VERSION}"
 
 # Training
-export TRAINING_STEPS=1000 #4000
-export LEARNING_RATE=0.05 #0.05
+export TRAINING_STEPS=4000 #4000
+export LEARNING_RATE=0.001 #0.05
 export TRAIN_BATCH_SIZE=100 #100
 export VALIDATION_BATCH_SIZE=-1 #100, -1
 export CROP=0
