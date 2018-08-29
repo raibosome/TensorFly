@@ -1,3 +1,4 @@
 /tf_files
 /data/
 .DS_Store
+__pycache__

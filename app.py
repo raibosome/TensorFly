@@ -26,7 +26,7 @@ def inference():
         f.save("./static/" + fname)
         fullpath = os.path.join(os.getcwd(), "static", fname)
 
-        modelname = os.environ['MODULE_ID']
+        modelname = os.environ['MODEL_ID']
 
         # Predict
         top, probs = load_real_time(

@@ -9,7 +9,7 @@ Not the kind of housefly but 'TensorFly' because I was training this on aeroplan
 ``` bash
 ├── Makefile           List of make commands
 ├── Queries            To download data
-├── application.py     Flask app
+├── app.py             Flask app
 ├── config             Configuration files
 ├── data               Downloaded images go here
 ├── logs               History of your queries

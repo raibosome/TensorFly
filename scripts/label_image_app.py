@@ -6,6 +6,7 @@ from __future__ import print_function
 import argparse
 import sys
 import time
+import os
 
 import numpy as np
 import tensorflow as tf
@@ -59,8 +60,8 @@ def load_real_time(file_name, model_file, label_file):
     # file_name = "tf_files/flower_photos/daisy/3475870145_685a19116d.jpg"
     # model_file = "tf_files/retrained_graph.pb"
     # label_file = "tf_files/retrained_labels.txt"
-    input_height = 224
-    input_width = 224
+    input_height = int(os.environ['INPUT_HEIGHT'])
+    input_width = int(os.environ['INPUT_WIDTH'])
     input_mean = 128
     input_std = 128
     input_layer = "input"
@@ -73,8 +74,8 @@ def load_real_time(file_name, model_file, label_file):
                                     input_mean=input_mean,
                                     input_std=input_std)
 
-    input_name = "import/" + input_layer
-    output_name = "import/" + output_layer
+    input_name = "import/" + "Placeholder"
+    output_name = "import/" + "final_result"
     input_operation = graph.get_operation_by_name(input_name)
     output_operation = graph.get_operation_by_name(output_name)
 

@@ -45,7 +45,7 @@ train :
 	say "Hello sir. Training for ${MODEL} is now complete. Please come to the computer to continue."
 
 app :
-	python application.py
+	python app.py
 
 train_legacy :
 	# remember to run `source config
