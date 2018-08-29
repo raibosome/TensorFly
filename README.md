@@ -144,11 +144,31 @@ Datasets:
 1. ImageNet
 2. iNaturalist (only trained with Inception V3)
 
-All these options can be set in `config/training.sh` before your, duh, training.
+| Model             | Versions      | Model Size        | Input Sizes           | Datasets Trained On   | Quantisation Option |
+| ----------------- | ------------- | ----------------- | --------------------- | --------------------- | ------------------- |
+| Inception         | v1, v2, v3    | -                 | 224 (v1), 299 (v1, v2)| ImageNet, iNaturalist | -
+| Inception-ResNet  | v2            | -                 | 299                   | ImageNet              | -
+| MobileNet         | v1, v2        | 100, 75, 50, 25   | 224, 192, 160, 128    | ImageNet              | Yes (v1)
+| NASNet            | large, mobile | -                 | 331                   | ImageNet              | -
+| PNASNet           | large         | -                 | -                     | ImageNet              | -
+| ResNet            | v1, v2        | 50, 101, 152      | -                     | ImageNet              | -
+
+All these options should set in `config/training.sh` before your training.
 
 Visit https://www.tensorflow.org/hub/modules/image.
 
-## Appendix B: Model Comparison
+## Appendix B: Model Specifications
 
-Not sure...
-
+| Model             | Version   | Input Size    | No. of Parameters | Penultimate Layer Size |
+| ----------------- | --------- | ------------- | ----------------- | ---------------------- |
+| Inception         | v1        | 224           |                   | 1024
+|                   | v2        | 299           |                   | 1024
+|                   | v3        | 299           |                   | 2048
+| Inception-ResNet  | v2        | 299           | ImageNet          | 1536
+| MobileNet         | v1        |               |                   |
+|                   | v2        |               | 3.3M              | 
+| NASNet            | large     | 331           | ImageNet          | 4032
+|                   | mobile    | 224           | ImageNet          | 1056
+| PNASNet           | large     | 331           | ImageNet          | 4320
+| ResNet            | v1        | 224           |                   | 2048
+|                   | v2        | 224           | ImageNet          | 2048
