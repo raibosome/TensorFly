@@ -130,46 +130,37 @@ open ios/tflite/*.xcworkspace
 
 We're lucky to have a myriad of things to choose from: (a) model; (b) model version; (c) model size; (d) option for quantisation; and (e) dataset on which the model was trained on.
 
-Models available in TensorFlow Hub:
-
-1. inception_{v1,v2,v3}
-2. inception_resnet_v2
-3. nasnet_{large,mobile}
-4. pnasnet_large
-5. resnet_{v1,v2}_{50,101,152}
-6. mobilenet_{v1,v2}\_{100,075,050,025}_{224,192,160,128}
-
-Datasets:
-
-1. ImageNet
-2. iNaturalist (only trained with Inception V3)
-
 | Model             | Versions      | Model Size        | Input Sizes           | Datasets Trained On   | Quantisation Option   | Update Version
 | ----------------- | ------------- | ----------------- | --------------------- | --------------------- | --------------------- | -------------
-| Inception         | v1, v2, v3    | -                 | 224 (v1), 299 (v1, v2)| ImageNet, iNaturalist | -                     | 1
+| Inception         | v1            | -                 | 224                   | ImageNet              | -                     | 1
+|                   | v2            | -                 | 299                   | ImageNet              | -                     | 1
+|                   | v3            | -                 | 299                   | ImageNet, iNaturalist^ | -                     | 1
 | Inception-ResNet  | v2            | -                 | 299                   | ImageNet              | -                     | 1
 | MobileNet         | v1            | 100, 75, 50, 25   | 224, 192, 160, 128    | ImageNet              | Yes                   | 1
-|                   | v2            | 140, 130, 100,<br>75, 50, 35   | 224, 192, 160, 128, 96 | ImageNet | -                    | 2
-| NASNet            | large, mobile | -                 | 331                   | ImageNet              | -                     | 1
-| PNASNet           | large         | -                 | -                     | ImageNet              | -                     | 2
+|                   | v2            | 140, 130, 100, 75, 50, 35   | 224, 192, 160, 128, 96 | ImageNet | -                       | 2
+| NASNet-A          | large, mobile | -                 | 331                   | ImageNet              | -                     | 1
+| PNASNet-5         | large         | -                 | -                     | ImageNet              | -                     | 2
 | ResNet            | v1, v2        | 50, 101, 152      | -                     | ImageNet              | -                     | 1
 
 All these options should be set in `config/training.sh` before training.
+
+ImageNet: ILSVRC-2012-CLS
+^The weights for this module were obtained by training on the iNaturalist (iNat) 2017 dataset, after pre-training on ImageNet.
 
 Visit https://www.tensorflow.org/hub/modules/image.
 
 ## Appendix B: Model Specifications
 
-| Model             | Version   | Input Size    | No. of Parameters | Penultimate Layer Size | Feature
-| ----------------- | --------- | ------------- | ----------------- | ---------------------- | -
-| Inception         | v1        | 224           |                   | 1024
-|                   | v2        | 299           |                   | 1024
-|                   | v3        | 299           |                   | 2048
-| Inception-ResNet  | v2        | 299           | ImageNet          | 1536
-| MobileNet         | v1        |               |                   | 1280
-|                   | v2        |               | 3.3M              | 
-| NASNet            | large     | 331           | ImageNet          | 4032
-|                   | mobile    | 224           | ImageNet          | 1056
-| PNASNet           | large     | 331           | ImageNet          | 4320
-| ResNet            | v1        | 224           |                   | 2048
-|                   | v2        | 224           | ImageNet          | 2048 | Batch norm
+| Model             | Version   | Input Size    | No. of Parameters | Penultimate Layer Size | Feature | Published |
+| ----------------- | --------- | ------------- | ----------------- | ---------------------- | - | -
+| Inception         | v1        | 224           | 6.6M              | 1024 | | 2014
+|                   | v2        | 299           | 11.2M             | 1024 | Batch norm | 2014
+|                   | v3        | 299           | 23.8M             | 2048 | | 2015
+| Inception-ResNet  | v2        | 299           | 55.8M             | 1536 | | 2016
+| MobileNet         | v1        | 128-224       | 4.2M?             | 1280
+|                   | v2        | 96-224        | 3.3M              |
+| NASNet-A          | large     | 331           |           | 4032 | | 2017
+|                   | mobile    | 224           |           | 1056 | | 2017
+| PNASNet-5         | large     | 331           |           | 4320 | | 2017
+| ResNet            | v1        | 224           |                   | 2048 | | 2015
+|                   | v2        | 224           |           | 2048 | Batch norm | 2016
