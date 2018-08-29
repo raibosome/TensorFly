@@ -23,6 +23,12 @@ Not the kind of housefly but 'TensorFly' because I was training this on aeroplan
     └── training_summaries  Event files of models
 ```
 
+Prepare `data/` and `tf_files/` folders
+
+```
+make prepare
+```
+
 ## 0. Download Libraries and Drivers
 
 1. TensorFlow: `tensorflow==1.8.*`

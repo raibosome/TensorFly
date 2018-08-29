@@ -1,5 +1,8 @@
 .PHONY : heyyy, clean, folders, reset, download, tensorboard, train, optimize, quantize, summarize, evaluate, test, speech, export
 
+prepare :
+	mkdir data tf_files
+
 download :
 	cat Queries >> logs/queried
 	echo >> logs/queried	# newline character spacing
