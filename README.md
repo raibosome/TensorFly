@@ -130,17 +130,17 @@ open ios/tflite/*.xcworkspace
 
 We're lucky to have a myriad of things to choose from: (a) model; (b) model version; (c) model size; (d) option for quantisation; and (e) dataset on which the model was trained on.
 
-| Model             | Versions      | Model Size        | Input Sizes           | Datasets Trained On   | Quantisation Option   | Update Version
+| Model             | Versions      | Model Size        | Input Sizes           | Pretrained On   | Quantisation Option   | Update Version
 | ----------------- | ------------- | ----------------- | --------------------- | --------------------- | --------------------- | -------------
-| `inception`         | `v1`            | -                 | 224                   | `imagenet`              | -                     | 1
-|                   | `v2`            | -                 | 299                   | `imagenet`              | -                     | 1
-|                   | `v3`            | -                 | 299                   | `imagenet`, `inaturalist`^ | -                     | 1
-| `inception-resnet`  | `v2`            | -                 | 299                   | `imagenet`              | -                     | 1
-| `mobilenet`         | `v1`            | depth: 100, 75, 50, 25   | 224, 192, 160, 128    | `imagenet`              | Yes                   | 1
-|                   | `v2`            | depth: 140, 130, 100, 75, 50, 35   | 224, 192, 160, 128, 96 | `imagenet` | -                       | 2
-| `nasnet`            | `large`, `mobile` | -                 | 331                   | `imagenet`              | -                     | 1
-| `pnaset`           | `large`         | -                 | 331                   | `imagenet`              | -                     | 2
-| `resnet`            | `v1`, `v2`        | layers: `50`, `101`, `152`      | 224                   | `imagenet`              | -                     | 1
+| `inception`       | `v1`          | -                 | `224`                 | `imagenet`              | -                     | `1`
+|                   | `v2`          | -                 | `299`                 | `imagenet`              | -                     | `1`
+|                   | `v3`          | -                 | `299`                 | `imagenet`, `inaturalist`^ | -                     | `1`
+| `inception-resnet` | `v2`         | -                 | `299`                 | `imagenet`              | -                     | `1`
+| `mobilenet`       | `v1`          | depth: `100`, `75`, `50`, `25`   | `224`, `192`, `160`, `128`    | `imagenet`              | Yes   | `1`
+|                   | `v2`          | depth: `140`, `130`, `100`, `75`, `50`, `35` | `224`, `192`, `160`, `128`, `96` | `imagenet` | - | `2`
+| `nasnet`          | `large`, `mobile` | -             | `331`                 | `imagenet`              | -                     | `1`
+| `pnaset`          | `large`       | -                 | `331`                 | `imagenet`              | -                     | `2`
+| `resnet`          | `v1`, `v2`    | layers: `50`, `101`, `152` | `224`        | `imagenet`              | -                     | `1`
 
 To use 
 
