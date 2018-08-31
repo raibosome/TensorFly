@@ -4,7 +4,7 @@ Runs a flask app
 import os
 from flask import Flask, render_template, request
 from werkzeug import secure_filename
-from scripts.label_image_application import load_real_time
+from scripts.label_image_app import load_real_time
 
 app = Flask(__name__)
 

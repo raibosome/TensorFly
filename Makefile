@@ -1,7 +1,7 @@
 .PHONY : heyyy, clean, folders, reset, download, tensorboard, train, optimize, quantize, summarize, evaluate, test, speech, export
 
 prepare :
-	mkdir data tf_files tf_files/bottlenecks tf_files/models_retrained tf_files/training_summaries
+	mkdir data tf_files tf_files/bottlenecks tf_files/models_retrained tf_files/training_summaries static
 
 download :
 	cat Queries >> logs/queried

@@ -1,5 +1,5 @@
 {
     "ChromeDriverLocation": "/Users/raimibinkarim/Library/chromedriver",
-    "NoOfImages": 350,
-    "QueryFilters": "-seating -model -card -dashboard -cockpit -blueprint -toy"
+    "NoOfImages": 5,
+    "QueryFilters": ""
 }
