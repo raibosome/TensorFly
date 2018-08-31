@@ -65,7 +65,7 @@ Alas not TensorFlow Serving. Just a simple Flask app.
 make app
 ```
 
-## 3. Mobile Deployment (Optional)
+<!-- ## 3. Mobile Deployment (Optional)
 
 Note that this only works if your model is MobileNet.
 
@@ -124,7 +124,7 @@ open ios/tfmobile/*.xcworkspace
 make export_tflite_to_ios
 pod update
 open ios/tflite/*.xcworkspace
-```
+``` -->
 
 ## Appendix A: Image Models in TensorFlow Hub
 
