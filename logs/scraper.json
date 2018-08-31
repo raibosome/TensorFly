@@ -1,12 +1,1 @@
-{
-    "Records": [
-        {
-            "keywords": "A330-300 OR Airbus A330-300 -Boeing -seating -model -card -dashboard -cockpit -blueprint -toy",
-            "limit": 350,
-            "size": "medium",
-            "print_urls": false,
-            "output_directory": "data",
-            "chromedriver": "/Users/raimibinkarim/Library/chromedriver"
-        }
-    ]
-}
+{"Records": [{ "keywords": "A330-300 OR Airbus A330-300 -Boeing ","limit": 20,"size": "medium", "print_urls": false, "output_directory": "data", "chromedriver": "/usr/local/bin/chromedriver"},{ "keywords": "Starwars ","limit": 20,"size": "medium", "print_urls": false, "output_directory": "data", "chromedriver": "/usr/local/bin/chromedriver"},{ "keywords": "Warcraft ","limit": 20,"size": "medium", "print_urls": false, "output_directory": "data", "chromedriver": "/usr/local/bin/chromedriver"},{ "keywords": "Starcraft ","limit": 20,"size": "medium", "print_urls": false, "output_directory": "data", "chromedriver": "/usr/local/bin/chromedriver"},{ "keywords": "Deadspace ","limit": 20,"size": "medium", "print_urls": false, "output_directory": "data", "chromedriver": "/usr/local/bin/chromedriver"},{ "keywords": "Picasso ","limit": 20,"size": "medium", "print_urls": false, "output_directory": "data", "chromedriver": "/usr/local/bin/chromedriver"},{ "keywords": "Landscapes ","limit": 20,"size": "medium", "print_urls": false, "output_directory": "data", "chromedriver": "/usr/local/bin/chromedriver"},{ "keywords": "fail memes ","limit": 20,"size": "medium", "print_urls": false, "output_directory": "data", "chromedriver": "/usr/local/bin/chromedriver"}] }

@@ -1,5 +1,5 @@
 {
-    "ChromeDriverLocation": "/Users/raimibinkarim/Library/chromedriver",
-    "NoOfImages": 5,
+    "ChromeDriverLocation": "/usr/local/bin/chromedriver",
+    "NoOfImages": 20,
     "QueryFilters": ""
 }
