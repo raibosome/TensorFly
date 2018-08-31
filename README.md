@@ -23,7 +23,7 @@ Not the kind of housefly but 'TensorFly' because I was training this on aeroplan
     └── training_summaries  Event files of models
 ```
 
-Prepare `data/` and `tf_files/` folders
+Prepare `data/`, `tf_files/`, `static/` folders
 
 ```
 make prepare
