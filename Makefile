@@ -1,5 +1,14 @@
 .PHONY : heyyy, clean, folders, reset, download, tensorboard, train, optimize, quantize, summarize, evaluate, test, speech, export
 
+TELL=echo
+
+init:
+ifeq (, $(shell which say))
+	TELL=echo
+else
+	TELL=say
+endif
+
 prepare :
 	mkdir data tf_files tf_files/bottlenecks tf_files/models_retrained tf_files/training_summaries static
 
@@ -8,12 +17,12 @@ download :
 	echo >> logs/queried	# newline character spacing
 	python scripts/scraper_maker.py
 	googleimagesdownload -cf logs/scraper.json
-	say "Sir are you there? The image downloads are ready. Cleaning folders and images now."
+	$(TELL) "Sir are you there? The image downloads are ready. Cleaning folders and images now."
 	make clean
 
 clean :
 	python scripts/image_cleaner.py
-	say "Folders and images are now cleaned."
+	$(TELL) "Folders and images are now cleaned."
 
 reset :
 	rm -rf tf_files/bottlenecks/* tf_files/training_summaries/*
@@ -42,7 +51,7 @@ train :
 	  --random_scale=${SCALE} \
 	  --random_brightness=${BRIGHTNESS} \
 	  --tfhub_module=${TFHUB_MODULE}
-	say "Hello sir. Training for ${MODEL} is now complete. Please come to the computer to continue."
+	$(TELL) "Hello sir. Training for ${MODEL} is now complete. Please come to the computer to continue."
 
 app :
 	python app.py
@@ -65,9 +74,7 @@ train_legacy :
 	  --random_crop=${CROP} \
 	  --random_scale=${SCALE} \
 	  --random_brightness=${BRIGHTNESS}
-	say "Hello sir. Training for ${MODULE_NICKNAME} is now complete. Please come to the computer to continue."
-
-	
+	$(TELL) "Hello sir. Training for ${MODULE_NICKNAME} is now complete. Please come to the computer to continue."
 
 train_tfmobileios :
 	# remember to run `source config
@@ -84,7 +91,6 @@ train_tfmobileios :
 	  --how_many_training_steps=${TRAINING_STEPS}  \
 	  --learning_rate=${LEARNING_RATE} \
 	  --train_batch_size=${TRAIN_BATCH_SIZE}
-	
 
 # serialise graphdef to protobuf
 optimize_pb :
@@ -163,12 +169,6 @@ test-jpeg :
 	  --input_width=${INPUT_WIDTH} \
 	  --image=${PATH_EVALUATE_JPEG}
 
-export :
-	make export_tflite_to_android
-	make export_tfmobile_to_android
-	make export_tfmobile_to_ios
-	make export_tflite_to_ios
-	make export_tflite_to_ios_supernew
 
 export_tfmobile_to_android :
 	cp tf_files/rounded_graph.pb android/tfmobile/assets/graph.pb
@@ -176,8 +176,8 @@ export_tfmobile_to_android :
 
 export_tflite_to_android :
 	cp tf_files/optimized_graph.lite android/tflite/app/src/main/assets/graph.lite 
-	cp tf_files/retrained_labels.txt android/tflite/app/src/main/assets/labels.txt 	
-	
+	cp tf_files/retrained_labels.txt android/tflite/app/src/main/assets/labels.txt
+
 export_tfmobile_to_ios :
 	cp tf_files/retrained_graph_tfmobileios.pb ios/tfmobile/data/graph.pb
 	cp tf_files/retrained_labels.txt ios/tfmobile/data/labels.txt
@@ -190,3 +190,14 @@ export_tflite_to_ios_supernew :
 	cp tf_files/optimized_graph.tflite ios/tflite2/data/graph.tflite
 	cp tf_files/retrained_labels.txt ios/tflite2/data/labels.txt
 
+########
+### Error here if this segment is uncommented out
+### ->recipe commences before first target.  Stop.
+###
+# export : 
+# 	echo Hello
+# 	make export_tflite_to_android
+# 	make export_tfmobile_to_android
+# 	make export_tfmobile_to_ios
+# 	make export_tflite_to_ios
+# 	make export_tflite_to_ios_supernew
