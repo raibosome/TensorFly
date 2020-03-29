@@ -12,7 +12,7 @@ if __name__ == '__main__':
     parser.add_argument("--project", help="project folder in data/ directory")
     FLAGS, _ = parser.parse_known_args()
 
-    with open('download_images/download.json') as json_file:
+    with open('settings.json') as json_file:
         config = json.load(json_file)
     QueryFilters = config['QueryFilters']
 
@@ -22,7 +22,8 @@ if __name__ == '__main__':
         if f == ".DS_Store":
             continue
         if not QueryFilters.strip() == "":
-            os.rename(os.path.join(base, f), os.path.join(base, f.split(QueryFilters)[0]).replace(" ",""))
+            os.rename(os.path.join(base, f), os.path.join(
+                base, f.split(QueryFilters)[0]).replace(" ", ""))
 
     # Rename files and remove if necessary
     for folder in os.listdir("./data/" + FLAGS.project + "/"):
@@ -39,8 +40,9 @@ if __name__ == '__main__':
             fileext = os.path.splitext(oldname)[1]
             newname = os.path.join(
                 basefolder,
-                os.path.splitext(filename)[0][:30].replace(" ", "-").replace(".", "-").replace("_","-").replace("--","-").replace("$", "").replace("?", "").
-                    replace("=","").replace("~", "").replace("%", "").replace("+", "").replace(",","") + fileext
+                os.path.splitext(filename)[0][:30].replace(" ", "-").replace(".", "-").replace("_", "-").replace("--", "-").replace("$", "").replace("?", "").
+                replace("=", "").replace("~", "").replace(
+                    "%", "").replace("+", "").replace(",", "") + fileext
             )
             if oldname != newname:
                 # print("Renamed " + oldname)

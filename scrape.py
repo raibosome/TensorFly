@@ -5,13 +5,13 @@ import csv
 import json
 import argparse
 
-#pylint: disable=C0103,C0301
+# pylint: disable=C0103,C0301
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--project", help="project folder in data/ directory")
     FLAGS, _ = parser.parse_known_args()
 
-    with open('download_images/download.json') as json_file:
+    with open('settings.json') as json_file:
         config = json.load(json_file)
 
     ChromeDriverLocation = config['ChromeDriverLocation']
@@ -22,12 +22,15 @@ if __name__ == '__main__':
     header = "{\"Records\": ["
     tail = "] }"
     jsondump = header
-    trailingsubheaderend = ",\"size\": \"medium\", " + "\"print_urls\": false, \"output_directory\": \"data/" + FLAGS.project + "\", " + "\"chromedriver\": \"" + ChromeDriverLocation + "\"}"
+    trailingsubheaderend = ",\"size\": \"medium\", " + \
+        "\"print_urls\": false, \"output_directory\": \"data/" + FLAGS.project + \
+        "\", " + "\"chromedriver\": \"" + ChromeDriverLocation + "\"}"
 
-    with open('download_images/Queries') as csvfile:
+    with open('Queries') as csvfile:
         readcsv = csv.reader(csvfile, delimiter=',')
         for row in readcsv:
-            leadingsubheader = "{ \"keywords\": \"" + row[0] + " " + QueryFilters + "\","
+            leadingsubheader = "{ \"keywords\": \"" + \
+                row[0] + " " + QueryFilters + "\","
             trailingsubheader = "\"limit\": " + NoOfImages + trailingsubheaderend
             jsondump = jsondump + leadingsubheader + trailingsubheader
             jsondump = jsondump + ","
