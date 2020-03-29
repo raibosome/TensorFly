@@ -1,7 +1,7 @@
-tensorflow==1.7.0
+tensorflow
 tqdm
 Flask
-tensorflow-hub==0.1.0
+tensorflow-hub
 numpy
 google-images-download
 selenium
