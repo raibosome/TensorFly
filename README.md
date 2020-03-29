@@ -25,7 +25,7 @@ Not the kind of housefly but 'TensorFly' because I was training this on aeroplan
 
 Prepare `data/`, `tf_files/`, `static/` folders
 
-```
+``` bash
 make prepare
 ```
 
@@ -139,7 +139,7 @@ We're lucky to have a myriad of things to choose from: (a) model; (b) model vers
 | `mobilenet`       | `v1`          | depth: `100`, `75`, `50`, `25`   | `224`, `192`, `160`, `128`    | `imagenet`              | Yes   | `1`
 |                   | `v2`          | depth: `140`, `130`, `100`, `75`, `50`, `35` | `224`, `192`, `160`, `128`, `96` | `imagenet` | - | `2`
 | `nasnet`          | `large`, `mobile` | -             | `331`                 | `imagenet`              | -                     | `1`
-| `pnaset`          | `large`       | -                 | `331`                 | `imagenet`              | -                     | `2`
+| `pnasnet`          | `large`       | -                 | `331`                 | `imagenet`              | -                     | `2`
 | `resnet`          | `v1`, `v2`    | layers: `50`, `101`, `152` | `224`        | `imagenet`              | -                     | `1`
 
 To use Inception V3 pretrained on ImageNet, set the following in `config/training.sh` before training.

@@ -1,8 +1,8 @@
-tensorflow==1.8.0
-tqdm==4.23.2
-Flask==0.12.3
+tensorflow==1.7.0
+tqdm
+Flask
 tensorflow-hub==0.1.0
-numpy==1.14.5
-google-images-download==2.3.0
-selenium==3.12.0
-python-magic==0.4.15
+numpy
+google-images-download
+selenium
+python-magic
