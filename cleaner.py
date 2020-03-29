@@ -12,9 +12,7 @@ if __name__ == '__main__':
     parser.add_argument("--project", help="project folder in data/ directory")
     FLAGS, _ = parser.parse_known_args()
 
-    with open('settings.json') as json_file:
-        config = json.load(json_file)
-    QueryFilters = config['QueryFilters']
+    QueryFilters = ""
 
     # Rename folders in data
     base = os.getcwd() + "/data/" + FLAGS.project + "/"

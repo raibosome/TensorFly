@@ -11,12 +11,9 @@ if __name__ == '__main__':
     parser.add_argument("--project", help="project folder in data/ directory")
     FLAGS, _ = parser.parse_known_args()
 
-    with open('settings.json') as json_file:
-        config = json.load(json_file)
-
-    ChromeDriverLocation = config['ChromeDriverLocation']
-    NoOfImages = str(config['NoOfImages'])
-    QueryFilters = config['QueryFilters']
+    ChromeDriverLocation = "/Users/raimibinkarim/Library/chromedriver"
+    NoOfImages = str(150)
+    QueryFilters = ""
 
     querylist = []
     header = "{\"Records\": ["

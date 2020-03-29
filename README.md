@@ -6,9 +6,7 @@ Tool to scrape images from Google and clean the images.
 
 2. Go to the `Queries` and enter your Google queries, one for every line.
 
-3. Edit `settings.json` accordingly.
-
-4. Run
+3. Run
 
     ``` bash
     make download
