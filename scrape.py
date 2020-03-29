@@ -2,7 +2,6 @@
 Reads queries from queries.csv and output to a json file
 """
 import csv
-import json
 import argparse
 
 # pylint: disable=C0103,C0301

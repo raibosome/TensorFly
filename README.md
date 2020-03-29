@@ -6,22 +6,18 @@ Tool to scrape images from Google and clean the images.
 
 2. Go to the `Queries` and enter your Google queries, one for every line.
 
-3. Run
-
-    ``` bash
-    make download
-    ```
+3. Download
 
     This downloads your queries into folders of images in the `data/` folder.
 
     ```bash
     cat download_images/Queries >> logs/queried
-    echo >> logs/queried	# newline character spacing
+    echo >> logs/queried
     python scripts/scraper_maker.py --project=${PROJECT}
     googleimagesdownload -cf logs/scraper.json
-    $(TELL) "Sir are you there? The image downloads are ready. Cleaning folders and images now."
-    make clean
     ```
+
+4. Clean
 
     ```bash
     python scripts/image_cleaner.py
