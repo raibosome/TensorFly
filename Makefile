@@ -1,5 +1,14 @@
 .PHONY : config, clean, folders, reset, download, tensorboard, train, optimize, quantize, summarize, evaluate, test, speech, export
 
+TELL=echo
+
+init:
+ifeq (, $(shell which say))
+	TELL=echo
+else
+	TELL=say
+endif
+
 prepare :
 	mkdir data/${PROJECT} tf_files/${PROJECT} tf_files/${PROJECT}/bottlenecks tf_files/${PROJECT}/models_retrained tf_files/${PROJECT}/training_summaries static
 
@@ -8,15 +17,15 @@ download :
 	echo >> logs/queried	# newline character spacing
 	python scripts/scraper_maker.py --project=${PROJECT}
 	googleimagesdownload -cf logs/scraper.json
-	say "Sir are you there? The image downloads are ready. Cleaning folders and images now."
+	$(TELL) "Sir are you there? The image downloads are ready. Cleaning folders and images now."
 	make clean
 
 summary :
 	echo "Trained on ${MODEL}"
 
 clean :
-	python scripts/image_cleaner.py --project=${PROJECT}
-	say "Folders and images are now cleaned."
+	python scripts/image_cleaner.py
+	$(TELL) "Folders and images are now cleaned."
 
 # reset :
 # 	rm -rf tf_files/${PROJECT}/bottlenecks/* tf_files/${PROJECT}/training_summaries/*
